@@ -1,23 +1,16 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import firebaseApp from "./firebase/creadenciales";
+import Home from "./Vistas/Home";
+import Login from "./Vistas/Login";
+
 
 function App() {
+
+  const[user, setuser] = useState(null);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div >
+      {user? <Home/>:<Login/>}
     </div>
   );
 }
